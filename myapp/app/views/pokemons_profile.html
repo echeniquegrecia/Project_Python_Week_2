@@ -1,0 +1,18 @@
+<h1>Pokemon Profile</h1>
+
+Name: {{arguments['pokemon_name']}}<br/>
+Type:
+{% for pokemon in arguments['pokemons'] %}
+    {%if pokemon.name == arguments['pokemon_name']%}
+        {% for pokemon_type in pokemon.type %}
+            {{pokemon_type}}
+        {% endfor %}
+    {%endif%}
+{% endfor %}
+<br/>
+PV: {{ arguments['profile'].pv }}<br/>
+Attaque: {{ arguments['profile'].attaque }}<br/> 
+
+<img src= {{"https://www.pokebip.com"}}{{ arguments['profile'].image}}>
+
+<a href="http://127.0.0.1:5000/all/pokemons">Go All Pokemons</a>

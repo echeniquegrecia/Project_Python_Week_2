@@ -1,0 +1,21 @@
+<h1>Find Pokemons by...</h1>
+
+<a href="http://127.0.0.1:5000/find/pokemons/">Go to find Pokemons</a></br></br>
+<table>
+  <tr>
+    <th>Pokedex id</th>
+    <th>Name</th>
+    <th>Type</th>
+  </tr>
+  {% for pokemon in arguments['pokemons'] %}
+  <tr>
+    <td>{{ pokemon.pokedex_id }}</td>
+    <td><a href= {{ "/pokemons/" }}{{ pokemon.name }}>{{ pokemon.name }}</a></td>
+    <td>
+    {% for pokemon_type in pokemon.type %}
+      {{pokemon_type}}
+    {% endfor %}
+    </td>
+    </tr>
+  {% endfor %}
+</table>

@@ -1,0 +1,12 @@
+Username: {{ user.name }}<br />
+Picture: {{ user._picture }}
+<br />
+Feed:
+<br />
+{% for post in feed %}
+    Name: {{ post.name }}<br />
+    Username: {{ post.username }}<br />
+    Picture: <img src="{{ post.picture }}" />
+    <br />
+    <hr />
+{% endfor %}

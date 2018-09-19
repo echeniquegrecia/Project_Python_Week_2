@@ -1,0 +1,28 @@
+<h1>Pokemon list</h1>
+
+<a href="http://127.0.0.1:5000/find/pokemons">Find Pokemons</a></br></br>
+<table>
+    <tr>
+      <th>Pokedex id</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Icon</th>
+    </tr>
+    {% for pokemon in arguments['pokemons'] %}
+    <tr>
+      <td>{{ pokemon.pokedex_id }}</td>
+      <td><a href= {{ "/pokemons/" }}{{ pokemon.name }}>{{ pokemon.name }}</a></td>
+      <td>
+      {% for pokemon_type in pokemon.type %}
+        {{pokemon_type}}
+      {% endfor %}
+      </td>
+      <td><img src= {{"https://www.pokebip.com/pokedex-images/sprites-shinies-7G/"}}{{pokemon.pokedex_id}}{{".png"}}></td>
+      </tr>
+    {% endfor %}
+</table>
+
+
+
+
+
